@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filosofía de Leibniz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Añade este bloque al principio del <body> o en el lugar que prefieras para el botón de regreso -->
+    <div style="margin: 24px 0;">
+        <a href="index.html" style="
+        display: inline-block;
+        background-color: var(--color-secundario, #3498db);
+        color: #fff;
+        padding: 12px 28px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        text-decoration: none;
+        margin-right: 10px;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+        transition: background 0.2s;
+    ">
+            ← Volver a la página principal
+        </a>
+    </div>
+    <div id="main-menu" class="section active">
+        <h1>Filosofía de Leibniz</h1>
+        <p>Mapa Mental Interactivo</p>
+        <div class="menu-buttons">
+            <button onclick="showSection('metafisica')">Metafísica</button>
+            <button onclick="showSection('epistemologia')">Epistemología</button>
+            <button onclick="showSection('teologia')">Teología</button>
+            <button onclick="showSection('matematicas')">Matemáticas y Lógica</button>
+            <button onclick="showSection('etica')">Ética y Política</button>
+            <button onclick="showSection('legado')">Influencias y Legado</button>
+        </div>
+    </div>
+    <div id="metafisica" class="section">
+        <h2>Metafísica</h2><ul>
+            <li>
+                <strong>Mónadas:</strong><ul>
+                    <li>
+                        Sustancias simples, indivisibles y sin partes.<ul>
+                            <li>No pueden ser creadas ni destruidas naturalmente.</li>
+                            <li>Son de naturaleza espiritual.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        "Puntos metafísicos" con percepciones y apetitos.<ul>
+                            <li><strong>Percepción:</strong> representa la realidad externa.</li>
+                            <li><strong>Apetito:</strong> tendencia a cambiar de percepción.</li>
+                        </ul>
+                    </li>
+                    <li>Reflejan el universo desde su perspectiva. No interactúan directamente.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Principio de Razón Suficiente:</strong><ul>
+                    <li>Todo hecho tiene explicación.</li>
+                    <li><strong>Verdades de Razón:</strong> necesarias (ej: 2+2=4).</li>
+                    <li><strong>Verdades de Hecho:</strong> contingentes, explicadas por Dios.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Armonía Preestablecida:</strong><ul>
+                    <li>Mónadas sincronizadas por Dios.</li>
+                    <li>Soluciona el dualismo mente-cuerpo.</li>
+                    <li>Analogía de los relojes sincronizados.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Pluralismo:</strong><ul>
+                    <li>Infinitas mónadas con jerarquía: desde materia hasta espíritu.</li>
+                    <li>Oposición a Spinoza y Descartes.</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <div id="epistemologia" class="section">
+        <h2>Epistemología</h2><ul>
+            <li>
+                <strong>Racionalismo:</strong><ul>
+                    <li>Conocimiento por razón, no solo sentidos.</li>
+                    <li>Los sentidos aportan casos; la razón extrae leyes.</li>
+                    <li>"Nada hay en el intelecto que no haya estado antes en los sentidos, excepto el propio intelecto".</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Ideas Innatas:</strong><ul>
+                    <li>Verdades a priori en el alma.</li>
+                    <li>Similares a vetas en el mármol: predisposiciones.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Teodicea:</strong><ul>
+                    <li>Dios eligió el mejor mundo posible.</li>
+                    <li>Máxima variedad con leyes simples.</li>
+                    <li>El mal es un subproducto del bien mayor.</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <div id="teologia" class="section">
+        <h2>Teología</h2><ul>
+            <li>
+                <strong>Dios como Razón Suficiente:</strong><ul>
+                    <li>Ser necesario que da existencia al universo.</li>
+                    <li>Mónada suprema, causa última de todo.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Optimismo:</strong><ul>
+                    <li>Este es el mejor mundo posible.</li>
+                    <li>No perfecto, pero el más coherente y ordenado.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Libre Albedrío:</strong><ul>
+                    <li>Dios conoce nuestras acciones, pero no obliga.</li>
+                    <li>Actuamos libremente aunque predispuestos.</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <div id="matematicas" class="section">
+        <h2>Matemáticas y Lógica</h2><ul>
+            <li>
+                <strong>Cálculo Infinitesimal:</strong><ul>
+                    <li>Co-inventor con Newton.</li>
+                    <li>Notación moderna (d/dx, ∫), reglas de derivación.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Sistema Binario:</strong><ul>
+                    <li>Base de la computación.</li>
+                    <li>Simboliza la creación: 1 (Dios), 0 (nada).</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Lógica Simbólica:</strong><ul>
+                    <li><em>Characteristica universalis</em>: lenguaje universal.</li>
+                    <li><em>Calculus ratiocinator</em>: razonamiento lógico formal.</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <div id="etica" class="section">
+        <h2>Ética y Política</h2><ul>
+            <li>
+                <strong>Armonía Universal:</strong><ul>
+                    <li>Bien común a través de felicidad individual.</li>
+                    <li>Justicia: caridad del sabio.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Apokatastasis:</strong><ul>
+                    <li>Restauración final del orden universal.</li>
+                    <li>Visión optimista de la salvación.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Diplomacia:</strong><ul>
+                    <li>Reunificación de religiones mediante la razón.</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <div id="legado" class="section">
+        <h2>Influencias y Legado</h2><ul>
+            <li>
+                <strong>Inspirado en:</strong><ul>
+                    <li><strong>Platón:</strong> ideas innatas.</li>
+                    <li><strong>Aristóteles:</strong> sustancia y finalidad.</li>
+                    <li><strong>Escolástica:</strong> lógica rigurosa.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Influyó en:</strong><ul>
+                    <li><strong>Kant y Hegel:</strong> Idealismo alemán.</li>
+                    <li><strong>Frege y Russell:</strong> lógica matemática.</li>
+                    <li><strong>Física:</strong> conservación de la energía (<em>vis viva</em>).</li>
+                </ul>
+            </li>
+        </ul><nav><button onclick="goBack()">Volver</button></nav>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
