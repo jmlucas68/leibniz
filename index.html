@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G. W. Leibniz: El Último Genio Universal</title>
+    <style>
+        /* --- Estilos Generales y Tipografía --- */
+        :root {
+            --color-primario: #2c3e50; /* Azul oscuro */
+            --color-secundario: #3498db; /* Azul brillante */
+            --color-fondo: #f4f7f6;
+            --color-texto: #333;
+            --color-fondo-tarjeta: #ffffff;
+            --sombra-tarjeta: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Helvetica Neue', 'Arial', sans-serif;
+            color: var(--color-primario);
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            border-bottom: 2px solid var(--color-secundario);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            color: var(--color-secundario);
+            margin-top: 30px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--color-secundario);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-secundario);
+            transition: all 0.3s ease;
+        }
+
+            a:hover {
+                color: var(--color-primario);
+                border-bottom: 1px solid var(--color-primario);
+            }
+
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Encabezado y Navegación --- */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.7), rgba(44, 62, 80, 0.7)), url('https://upload.wikimedia.org/wikipedia/commons/a/a6/Gottfried_Wilhelm_von_Leibniz%2C_Gem%C3%A4lde_von_Christoph_Bernhard_Francke_1.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+            .hero h1 {
+                color: white;
+                margin: 0;
+            }
+
+            .hero .subtitle {
+                font-size: 1.5rem;
+                font-style: italic;
+                font-weight: 300;
+            }
+
+        nav {
+            background-color: var(--color-primario);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+            nav ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+                nav ul li a {
+                    display: block;
+                    color: white;
+                    padding: 15px 20px;
+                    text-decoration: none;
+                    border-bottom: none;
+                    font-family: 'Helvetica Neue', sans-serif;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                }
+
+                    nav ul li a:hover {
+                        background-color: var(--color-secundario);
+                    }
+
+        /* --- Estilo de Tarjetas para conceptos --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: var(--color-fondo-tarjeta);
+            border-radius: 8px;
+            box-shadow: var(--sombra-tarjeta);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            }
+
+        /* --- Citas --- */
+        blockquote {
+            background-color: #eaf3f9;
+            border-left: 5px solid var(--color-secundario);
+            margin: 20px 0;
+            padding: 20px;
+            font-style: italic;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+            blockquote::before {
+                content: '“';
+                font-size: 4rem;
+                color: var(--color-secundario);
+                opacity: 0.3;
+                position: absolute;
+                top: -10px;
+                left: 10px;
+            }
+
+        cite {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-style: normal;
+            font-weight: bold;
+            color: var(--color-primario);
+        }
+
+        /* --- Listas de obras y fuentes --- */
+        .works-list li, .sources-list li {
+            background-color: var(--color-fondo-tarjeta);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: var(--sombra-tarjeta);
+            list-style-type: none;
+        }
+
+        .works-list strong {
+            display: block;
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            margin-bottom: 10px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--color-primario);
+            color: #bdc3c7;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        /* --- Media Queries para Responsividad --- */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Gottfried Wilhelm Leibniz</h1>
+        <p class="subtitle">(1646 - 1716)</p>
+        <p>Filósofo, matemático, lógico, teólogo, jurista, bibliotecario y político.</p>
+        <p><strong>El último genio universal.</strong></p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#vida">Vida y Contexto</a></li>
+            <li><a href="#pensamiento">Pensamiento</a></li>
+            <li><a href="#obras">Obras Principales</a></li>
+            <li><a href="#influencias">Influencias</a></li>
+            <li><a href="#fuentes">Fuentes y Recursos</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+
+        <section id="vida">
+            <h2>Vida y Contexto Histórico</h2>
+            <p>
+                Gottfried Wilhelm Leibniz nació en Leipzig, Sacro Imperio Romano Germánico, en un momento de gran agitación y cambio en Europa. El continente apenas se recuperaba de la <strong>Guerra de los Treinta Años</strong>, y el ambiente intelectual estaba marcado por la <strong>Revolución Científica</strong>. Figuras como Descartes, Galileo y Newton estaban redefiniendo la comprensión del universo.
+            </p>
+            <p>
+                Leibniz fue un niño prodigio. Aprendió latín y griego por su cuenta y a los 20 años ya había completado sus estudios en derecho y filosofía. A diferencia de otros filósofos que trabajaron en la soledad académica, Leibniz fue un hombre de mundo. Sirvió como consejero, diplomático y bibliotecario para la <strong>Casa de Hannover</strong> durante más de 40 años. Esta posición le permitió viajar, conocer a las mentes más brillantes de su tiempo y tener acceso a una vasta cantidad de conocimiento.
+            </p>
+            <p>
+                Su genio abarcó campos increíblemente diversos. En matemáticas, desarrolló el <strong>cálculo infinitesimal</strong> independientemente de Isaac Newton, lo que generó una amarga disputa de prioridad. Su notación (como <code>dy/dx</code> para la derivada y el símbolo <code>∫</code> para la integral) es la que usamos hoy. También perfeccionó el <strong>sistema binario</strong>, fundamento de la computación moderna. Su sueño era crear una <em>characteristica universalis</em>, un lenguaje formal y universal que pudiera expresar todo el pensamiento humano y resolver disputas mediante el cálculo ("Calculemus!").
+            </p>
+        </section>
+
+        <section id="pensamiento">
+            <h2>El Pensamiento Filosófico</h2>
+            <p>
+                El sistema filosófico de Leibniz es uno de los pináculos del <strong>racionalismo</strong>. Buscaba reconciliar la filosofía, la ciencia y la teología en un sistema coherente, optimista y lógicamente riguroso. Sus ideas principales giran en torno a unos pocos conceptos fundamentales.
+            </p>
+            <div class="grid">
+                <article class="card">
+                    <h3>La Teoría de las Mónadas</h3>
+                    <p>Para Leibniz, la realidad última no está compuesta de átomos materiales, sino de <strong>Mónadas</strong>: sustancias simples, indivisibles, inextensas y eternas. Cada mónada es un "átomo espiritual", un centro de fuerza y percepción. Son como almas o puntos de vista únicos sobre el universo. No interactúan entre sí ("no tienen ventanas"), pero cada una refleja el universo entero desde su propia perspectiva.</p>
+                    <blockquote>
+                        "La Mónada, de la que hablaremos aquí, no es otra cosa que una sustancia simple que entra en los compuestos; simple, es decir, sin partes."
+                        <cite>Monadología, §1</cite>
+                    </blockquote>
+                </article>
+
+                <article class="card">
+                    <h3>La Armonía Preestablecida</h3>
+                    <p>Si las mónadas no interactúan, ¿cómo se explica la aparente causalidad en el mundo (que mi cuerpo se mueva cuando mi alma lo decide)? Leibniz responde con la <strong>Armonía Preestablecida</strong>. Dios, al crear el universo, sincronizó perfectamente el "programa" interno de cada mónada para que sus estados se correspondieran con los de las demás, como dos relojes perfectos que dan la misma hora sin estar conectados. La causalidad es una ilusión bien fundada en esta perfecta sincronía divina.</p>
+                    <blockquote>
+                        "Los cuerpos actúan como si no hubiese almas (lo que es imposible); y las almas actúan como si no hubiese cuerpos; y ambos actúan como si el uno influyese sobre el otro."
+                        <cite>Monadología, §81</cite>
+                    </blockquote>
+                </article>
+
+                <article class="card">
+                    <h3>El Mejor de los Mundos Posibles</h3>
+                    <p>Esta es quizás su idea más famosa y controvertida. Siendo Dios omnipotente, omnisciente y bueno, tuvo que elegir crear el mejor universo de entre todos los mundos posibles. Este mundo, a pesar de su mal y sufrimiento, es el que contiene la mayor cantidad de bien, perfección y "compossibilidad" (la compatibilidad lógica entre esencias). El mal no es algo creado por Dios, sino una consecuencia inevitable de la finitud de las criaturas y una condición necesaria para un bien mayor.</p>
+                    <blockquote>
+                        "Se sigue de la suprema perfección de Dios que, al producir el universo, ha elegido el mejor plan posible, donde hay la mayor variedad, junto con el mayor orden..."
+                        <cite>Principios de la Naturaleza y de la Gracia, §10</cite>
+                    </blockquote>
+                </article>
+
+                <article class="card">
+                    <h3>Principio de Razón Suficiente</h3>
+                    <p>Junto con el principio de no contradicción, este es el pilar de su metafísica. Sostiene que <strong>"nada ocurre sin una razón"</strong>. Para cualquier verdad o hecho, debe haber una razón suficiente por la cual es así y no de otra manera. Para las verdades contingentes (hechos del mundo), la razón última se encuentra en la elección de Dios de crear el mejor mundo posible. Para las verdades necesarias (matemáticas, lógica), la razón se encuentra en su propia definición.</p>
+                    <blockquote>
+                        "...jamás ocurre algo sin que haya una causa o, al menos, una razón determinante, es decir, algo que pueda servir para dar razón a priori de por qué algo existe y por qué existe de esta manera y no de otra."
+                        <cite>Ensayos de Teodicea, §44</cite>
+                    </blockquote>
+                </article>
+            </div>
+        </section>
+
+        <section id="obras">
+            <h2>Obras Principales y Enlaces</h2>
+            <p>Leibniz escribió en latín, francés y alemán, y gran parte de su obra consiste en cartas y ensayos breves. Aquí se listan algunas de sus obras más influyentes con enlaces a versiones en español.</p>
+            <ul class="works-list">
+                <li>
+                    <strong>Monadología (1714)</strong>
+                    <p>Un resumen conciso y denso de su sistema metafísico completo. Es la mejor introducción a su pensamiento maduro.</p>
+                    <a href="https://www.gutenberg.org/ebooks/66929" target="_blank">[Ebook Gratuito - Project Gutenberg]</a>
+                    <a href="https://es.wikisource.org/wiki/Monadolog%C3%ADa" target="_blank">[Texto en Wikisource]</a>
+                </li>
+                <li>
+                    <strong>Discurso de Metafísica (1686)</strong>
+                    <p>Una exposición más temprana y accesible de muchas de las ideas que luego desarrollaría en la Monadología.</p>
+                    <a href="https://archive.org/details/discursodemetafi00leibuoft" target="_blank">[Ebook Gratuito - Archive.org]</a>
+                    <a href="https://www.amazon.es/Discurso-metaf%C3%ADsica-Biblioteca-grandes-pensadores/dp/8424937805/" target="_blank">[Comprar en Amazon]</a>
+                </li>
+                <li>
+                    <strong>Nuevos ensayos sobre el entendimiento humano (1704, pub. 1765)</strong>
+                    <p>Una respuesta detallada, capítulo por capítulo, al "Ensayo sobre el entendimiento humano" de John Locke. Es un diálogo fundamental entre el racionalismo continental y el empirismo británico.</p>
+                    <a href="https://archive.org/details/nuevosensayossob01leib" target="_blank">[Ebook Gratuito (Tomo 1) - Archive.org]</a>
+                    <a href="https://www.amazon.es/Nuevos-ensayos-sobre-entendimiento-humano/dp/8420677239/" target="_blank">[Comprar en Amazon]</a>
+                </li>
+                <li>
+                    <strong>Ensayos de Teodicea sobre la bondad de Dios, la libertad del hombre y el origen del mal (1710)</strong>
+                    <p>La única gran obra filosófica que publicó en vida. Aquí defiende sistemáticamente la idea del "mejor de los mundos posibles" para justificar la existencia del mal en un mundo creado por un Dios bueno.</p>
+                    <a href="https://www.amazon.es/Ensayos-Teodicea-bondad-libertad-hombre/dp/8494539824/" target="_blank">[Comprar en Amazon]</a>
+                    <p><small>(No se encontraron versiones gratuitas completas y fiables en español en las plataformas principales, se recomienda la compra o búsqueda en bibliotecas digitales).</small></p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="influencias">
+            <h2>Influencias y Legado</h2>
+            <div class="grid">
+                <article class="card">
+                    <h3>Influencias Recibidas</h3>
+                    <p>Leibniz dialogó con toda la tradición filosófica anterior. Sus principales influencias fueron:</p>
+                    <ul>
+                        <li><strong>Aristóteles:</strong> De quien tomó la noción de sustancia como sujeto último de predicación y la teleología (la idea de un propósito final en la naturaleza).</li>
+                        <li><strong>Platón y el Neoplatonismo:</strong> La idea de un mundo de formas o ideas perfectas y la emanación de la realidad desde un Uno supremo.</li>
+                        <li><strong>Escolástica:</strong> El rigor lógico y el intento de sintetizar fe y razón.</li>
+                        <li><strong>Descartes:</strong> Fue el principal interlocutor del racionalismo. Leibniz aceptó el giro hacia el sujeto pero criticó duramente su dualismo mente-cuerpo y su física.</li>
+                        <li><strong>Spinoza:</strong> Leibniz admiraba su rigor lógico pero rechazaba su monismo (la idea de una única sustancia, Dios o Naturaleza), proponiendo en su lugar un pluralismo infinito de mónadas.</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Influencias Ejercidas</h3>
+                    <p>El impacto de Leibniz fue inmenso y duradero, tanto en filosofía como en ciencia:</p>
+                    <ul>
+                        <li><strong>Christian Wolff:</strong> Sistematizó y popularizó la filosofía de Leibniz, creando la influyente "filosofía Leibniziano-Wolffiana" que dominó las universidades alemanas.</li>
+                        <li><strong>Immanuel Kant:</strong> La filosofía de Leibniz-Wolff fue el "sueño dogmático" del que Kant fue despertado por Hume. Toda la "Crítica de la Razón Pura" es, en gran medida, un diálogo crítico con el racionalismo leibniziano.</li>
+                        <li><strong>Idealismo Alemán (Hegel, Schelling):</strong> Heredaron la idea de un universo dinámico, teleológico y racional.</li>
+                        <li><strong>Lógica y Filosofía Analítica:</strong> Bertrand Russell y Louis Couturat redescubrieron a Leibniz a principios del siglo XX, viéndolo como un precursor de la lógica simbólica moderna.</li>
+                        <li><strong>Ciencia de la Computación:</strong> Su desarrollo del sistema binario es la base matemática de todos los ordenadores digitales.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+        <section id="videos">
+            <h2>Videos recomendados</h2>
+            <div class="card" style="max-width: 600px; margin: 0 auto;">
+                <h3>La Filosofía de Leibniz - Conceptos Fundamentales (La Travesía)</h3>
+                <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+                    <iframe src="https://www.youtube.com/embed/k1BERC0_TZE"
+                            title="La Filosofía de Leibniz - Conceptos Fundamentales (La Travesía)"
+                            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    </iframe>
+                </div>
+                <p>
+                    <a href="https://youtu.be/k1BERC0_TZE?si=Jxi6t5pUAFHHXvng" target="_blank">
+                        Ver en YouTube
+                    </a>
+                </p>
+            </div>
+        </section>
+        <section id="fuentes">
+            <h2>Fuentes y Recursos para Saber Más</h2>
+            <p>Esta página es una introducción. Para profundizar en la vida y obra de Leibniz, se recomiendan los siguientes recursos:</p>
+            <ul class="sources-list">
+                <li>
+                    <strong>Enciclopedias Filosóficas (muy recomendadas):</strong>
+                    <a href="https://plato.stanford.edu/entries/leibniz/" target="_blank">Stanford Encyclopedia of Philosophy (en inglés)</a> - El recurso académico más completo y riguroso.
+                    <a href="https://iep.utm.edu/leibniz/" target="_blank">Internet Encyclopedia of Philosophy (en inglés)</a> - Otra excelente fuente académica.
+                </li>
+                <li>
+                    <strong>Artículos y Wikis:</strong>
+                    <a href="https://es.wikipedia.org/wiki/Gottfried_Leibniz" target="_blank">Wikipedia en Español</a> - Un buen punto de partida con amplia información general.
+                    <a href="https://www.academia.edu/Documents/in/Gottfried_Wilhelm_Leibniz" target="_blank">Artículos en Academia.edu</a> - Búsqueda de trabajos académicos sobre Leibniz.
+                </li>
+                <li>
+                    <strong>Fuentes de esta página:</strong>
+                    La información y las citas han sido compiladas y contrastadas principalmente a partir de los artículos de la Stanford Encyclopedia of Philosophy, Wikipedia y la lectura de las propias obras de Leibniz como la "Monadología" y el "Discurso de Metafísica".
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Página creada con HTML y CSS puro. Homenaje a Gottfried Wilhelm Leibniz.</p>
+    </footer>
+
+</body>
+</html>
